@@ -153,22 +153,7 @@ index pattern `nginx-filebeat-*`, time field `@timestamp` → **Discover**.
 
 ---
 
-## ⚠️ После сдачи — снести стек
 
-Сервер `<ip-сервера>` почти заполнен по диску. Как только снимешь скриншоты и
-сдашь ДЗ, освободи ресурсы:
-
-```bash
-cd /home/dockeruser/elk-hw && bash scripts/teardown.sh    # вернёт ~2.5 GB диска и RAM
-```
-
-## Как вставить скриншот
-
-1. Сделай скриншот, сохрани PNG в папку `docs/screenshots/` с именем из ссылки выше
-   (например `01-cluster-health.png`).
-2. Markdown-ссылка `![текст](docs/screenshots/01-cluster-health.png)` уже стоит — после
-   коммита картинка отобразится на GitHub.
-3. `git add docs/screenshots && git commit -m "add screenshots" && git push origin`.
 
 ## Структура репозитория
 
