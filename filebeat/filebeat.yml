@@ -1,0 +1,26 @@
+# Задание 4: Nginx access-log -> Filebeat -> Elasticsearch (напрямую, без Logstash)
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/nginx/hw_access.log
+    fields:
+      source_type: nginx-filebeat
+    fields_under_root: true
+
+# Чтобы Filebeat сам разобрал combined-формат Nginx, можно включить модуль nginx.
+# Здесь оставлен простой log-input для надёжности (логи видны в Discover как message).
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  index: "nginx-filebeat-%{+yyyy.MM.dd}"
+
+# При кастомном index обязателен шаблон/ILM-отключение:
+setup.ilm.enabled: false
+setup.template.name: "nginx-filebeat"
+setup.template.pattern: "nginx-filebeat-*"
+
+setup.kibana:
+  host: "kibana:5601"
+
+logging.level: info
