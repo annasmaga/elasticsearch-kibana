@@ -1,6 +1,6 @@
 # Занятие: ELK Stack (Elasticsearch, Kibana, Logstash, Filebeat)
 
-**Студент:** _Фамилия Имя_  <!-- TODO: впиши свои фамилию и имя -->
+**Студент:** Анна Смага  <!-- TODO: впиши свои фамилию и имя -->
 
 Домашнее задание: установить и настроить стек ELK, доставить access-логи Nginx
 в Elasticsearch сначала через Logstash, затем через Filebeat.
